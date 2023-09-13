@@ -5,23 +5,19 @@ function Limit({ data, limitType, initialLimit, limitName }) {
     const [isTextboxOpen, setIsTextboxOpen] = useState(true);
     const [isExistLimit, setIsExistLimit] = useState(true);
 
-    const prepareLimitData = useCallback(() => {
-        return data.reduce((object, item) => {
+    const handleLimitData = useCallback((newLimit = 0) => {
+        const counts = data.reduce((object, item) => {
             const {dateTime, [limitName]: limitValue} = item;
             const key = limitType === 'price' ? new Date(dateTime).getMonth() : new Date(dateTime).toLocaleDateString();
             object[key] = (object[key] || 0) + parseInt(limitValue);
             return object;
         }, {});
-    }, [data, limitType, limitName]);
-
-    const handleLimitData = useCallback((newLimit = 0) => {
-        const counts = prepareLimitData()
         const currentDate = limitType === 'price' ? new Date().getMonth() : new Date().toLocaleDateString();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         limit = newLimit > 0 ? newLimit : limit;
         const limitCheck = !counts.hasOwnProperty(currentDate) || limit >= counts[currentDate];
         setIsExistLimit(limitCheck);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [limit, prepareLimitData]);
+    }, [data, limitType, limitName, limit]);
 
     useEffect(() => {
         handleLimitData();

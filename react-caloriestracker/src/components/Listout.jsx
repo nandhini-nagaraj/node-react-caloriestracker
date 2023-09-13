@@ -18,7 +18,6 @@ export default function Listout({data, title = false}) {
 
                 {
                     data && data.map((entry, index) => {
-                    console.log (entry);
                     return <tr key={index}>
                         <td> <span>{new Date(entry.dateTime).toLocaleString()}</span></td>
                         <td>  <span>{entry.foodName}</span></td>

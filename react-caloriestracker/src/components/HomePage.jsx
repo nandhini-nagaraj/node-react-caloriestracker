@@ -18,7 +18,6 @@ function HomePage() {
                 responseType: 'json'
             })
                 .then(function (response) {
-                    console.log(response.data)
                     if (!ignore) {
                         setFetchedData(convertArray(response));
                     }
