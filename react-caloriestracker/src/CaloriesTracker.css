@@ -1,0 +1,237 @@
+body {
+    font-family: 'Courier New', monospace;
+}
+
+:root {
+    /* generic */
+    --gutterSm: 0.4rem;
+    --gutterMd: 0.8rem;
+    --gutterLg: 1.6rem;
+    --gutterXl: 2.4rem;
+    --gutterXx: 7.2rem;
+    --colorPrimary400: #7e57c2;
+    --colorPrimary600: #5e35b1;
+    --colorPrimary800: #4527a0;
+    --fontFamily: "Dosis", sans-serif;
+    --fontSizeSm: 1.2rem;
+    --fontSizeMd: 1.6rem;
+    --fontSizeLg: 2.1rem;
+    --fontSizeXl: 2.8rem;
+    --fontSizeXx: 3.6rem;
+    --lineHeightSm: 1.1;
+    --lineHeightMd: 1.8;
+    --transitionDuration: 300ms;
+    --transitionTF: cubic-bezier(0.645, 0.045, 0.355, 1);
+
+    /* floated labels */
+    --inputPaddingV: var(--gutterMd);
+    --inputPaddingH: var(--gutterLg);
+    --inputFontSize: var(--fontSizeLg);
+    --inputLineHeight: var(--lineHeightMd);
+    --labelScaleFactor: 0.8;
+    --labelDefaultPosY: 50%;
+    --labelTransformedPosY: calc(
+            (var(--labelDefaultPosY)) -
+            (var(--inputPaddingV) * var(--labelScaleFactor)) -
+            (var(--inputFontSize) * var(--inputLineHeight))
+    );
+    --inputTransitionDuration: var(--transitionDuration);
+    --inputTransitionTF: var(--transitionTF);
+}
+
+h1, h2, h3 {
+    font-weight: 900;
+}
+
+.root {
+    margin-left: 200px;
+}
+
+.navigation {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 75%;
+    height: 100px;
+    background: #3B3E43;
+    color: #fff;
+}
+
+.navigation a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navigation nav {
+    display: flex;
+    float: right;
+    height: 70px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation nav a {
+    line-height: 70px;
+    padding: 0 100px;
+    transition: 0.5s all;
+
+}
+
+.navigation .menu_links {
+    text-align: right;
+}
+
+.warning {
+    color: red;
+    /*float: left;*/
+}
+
+.warning:after {
+    content: "\00a0";
+    /*float: left;*/
+}
+
+.navigation .title {
+    margin-top: 10px;
+    position: absolute;
+}
+
+.link {
+    text-decoration: underline;
+}
+
+.limit-container p {
+    display: inline-block;
+}
+
+.main {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+    width: 75%;
+}
+
+.list-container {
+    width: 75%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.search-container {
+    margin-bottom: 10px;
+    margin-left: 0px;
+}
+
+.search-container input {
+    margin-left: 0px;
+    width: 40%;
+}
+
+.search-container p {
+    position: relative;
+    background: rgb(242, 242, 242);
+    padding: 2rem;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}
+
+.search-container .list-container {
+    width: auto;
+}
+
+.limit-container {
+    background: rgb(242, 242, 242);
+    padding: 0.5rem;
+}
+
+.list-container th {
+    padding: 15px 15px;
+    font-weight: bold;
+    background: #4C4D99 !important;
+    color: #fff !important;
+    text-align: center;
+}
+
+.list-container td {
+    padding: 10px 15px;
+}
+
+.list-container tr:nth-child(odd) {
+    background-color: #D9F4ED;
+}
+
+.list-container table tr {
+    background-color: #C7EEE4;
+}
+
+.list-container table td {
+    background-color: #C7EEE4;
+}
+
+.food-entry-container {
+    width: 75%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.food-entry-container div {
+    padding: 5px 5px;
+}
+
+button {
+    color: white;
+    background-color: #4C4D99;
+    padding: 0.5rem;
+    width: 25%;
+    font-family: inherit;
+    font-size: var(--fontSizeSm);
+    font-weight: bold;
+    border-radius: 0.4rem;
+    margin-left: 10px;
+}
+
+.input-text {
+    display: block;
+    margin: 10px;
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    width: 100%;
+    font-family: inherit;
+    font-size: var(--fontSizeSm);
+    font-weight: inherit;
+    line-height: var(--inputLineHeight);
+    border-radius: 0.4rem;
+    transition: box-shadow var(--transitionDuration);
+}
+
+.search-box:focus {
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+}
+
+.input-text::placeholder {
+    color: #B0BEC5;
+}
+
+.food-entry-container label {
+    width: 25%;
+}
+
+.food-entry-container input {
+    width: 50%;
+}
+
+h1, h2, h3 {
+    font-weight: 900;
+}
+
+.hidden {
+    display: none;
+}
+
+.shown {
+    display: block;
+}
